@@ -8,15 +8,12 @@ import sys
 def clicked_add():  #相加的計算機
     x=ui.num1.text()
     y=ui.num2.text()
-   
-    if x.isnumeric() == True and y.isnumeric() == True:  
-        z =float(x)+float(y)
-        ui.label.setText(str(z)) #labe會產生出相加後答案
-    else:
-        message= QMessageBox()
-        message.setWindowTitle("error")  #左上角 #mac跑不出來
-        message.setInformativeText("輸入錯誤，請再輸入一次")
-        message.exec_()
+
+    z=float(x)+float(y)
+    message= QMessageBox()
+    message.setWindowTitle("result")  #左上角 #mac跑不出來
+    message.setInformativeText(str(z))
+    message.exec_()
 
 
 

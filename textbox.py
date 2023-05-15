@@ -6,14 +6,14 @@ from mainwindow11 import Ui_Dialog #把隔壁檔案import進來
 import sys
 
 def clicked_press_me():
-    x=ui.lineEdit_2.text() 
-    message=QMessageBox()  #視窗跳出來
-    message.setWindowTitle("sur")  #左上角
+    x=ui.lineEdit_2.text() #以string讀取輸入line edit的x
+    message=QMessageBox()  #建立視窗
+    message.setWindowTitle("sur")  #視窗左上角的文字
     message.setInformativeText(x)
     message.exec_()
 
-def clicked_hello():
-    ui.label.setText("hello")
+def clicked_hello(): #按show string按鈕會在label出現hello
+    ui.label.setText("hello") 
     print("hello")
 
 app= QApplication(sys.argv) #argv #qt程式第一行一定要有這個，不然會報錯
