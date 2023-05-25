@@ -5,13 +5,14 @@ from PyQt5.QtGui import*
 from mainwindow import Ui_Dialog #把隔壁檔案import進來
 import sys
 
-def clicked_add():  #相加的計算機
-    x=ui.num1.text()
-    y=ui.num2.text()
-   
-    if x.isnumeric() == True and y.isnumeric() == True:  
-        z =float(x)+float(y)
-        ui.label.setText(str(z)) #labe會產生出相加後答案
+def clicked_add():  #相加的計算機，button的功能
+    text1=ui.lineEdit_2.text() #lineEdit是string格式，因為要相加，所要要轉成數值
+    text2=ui.lineEdit_3.text()
+    if text1.isnumeric()and text2.isnumeric():
+  
+        var1 =float(text1) #string變成float
+        var2 =float(text2)
+        ui.label.setText(str(var1+var2)) #labe會產生出相加後答案
     else:
         message= QMessageBox()
         message.setWindowTitle("error")  #左上角 #mac跑不出來
@@ -23,8 +24,8 @@ def clicked_add():  #相加的計算機
 app= QApplication(sys.argv) #argv #qt程式第一行一定要有這個，不然會報錯
 #dialog要放到widge裡面
 widge= QWidget()
-ui=Ui_Dialog()
-ui.setupUi(widge)
+ui=Ui_Dialog()#Ui
+ui.setupUi(widge) #大部分繼承用qmainwindow
 
 ui.addButton.clicked.connect(clicked_add) #藍字是object name
 
